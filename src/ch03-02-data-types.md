@@ -33,13 +33,69 @@ that the value it's associated with should be a signed integer (hence the `i`,
 as opposed to a `u` for unsigned) for a 32-bit system. There are a number of
 built-in integer types in Rust, shown in Table 3-1.
 
-| Length | signed | unsigned |
-|--------|--------|----------|
-| 8-bit  | i8     | u8       |
-| 16-bit | i16    | u16      |
-| 32-bit | i32    | u32      |
-| 64-bit | i64    | u64      |
-| arch   | isize  | usize    |
+| Length | signed |                                                         | unsigned |                                 |
+|--------|--------|---------------------------------------------------------|----------|---------------------------------|
+| 8-bit  | i8     |                       -128 to 127                       | u8       | 0 to 255                        |
+| 16-bit | i16    |                    -32,768 to 32,767                    | u16      | 0 to 65,535                     |
+| 32-bit | i32    |             –2,147,483,648 to 2,147,483,647             | u32      | 0 to 4,294,967,295              |
+| 64-bit | i64    | –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 | u64      | 0 to 18,446,744,073,709,551,615 |
+| arch   | isize  |                                                         | usize    |                                 |
+
+*Table 4-1: Integer types in Rust. Each code (for example, i32) can be used to
+declare the type of a value.*
+
+<table><thead><tr><td> Length </td><td> signed </td><td> </td>
+<td> unsigned </td><td> </td></tr></thead>
+<tbody><tr><td> 8-bit </td><td> i8 </td><td align="center"> -128 to 127 </td>
+<td> u8 </td><td> 0 to 255 </td></tr>
+<tr><td> 16-bit </td><td> i16 </td><td align="center"> -32,768 to 32,767 </td>
+<td> u16 </td><td> 0 to 65,535 </td></tr>
+<tr><td> 32-bit </td><td> i32 </td><td align="center">
+–2,147,483,648 to 2,147,483,647 </td><td> u32 </td>
+<td> 0 to 4,294,967,295 </td></tr>
+<tr><td> 64-bit </td><td> i64 </td>
+<td style="font-size: x-small;" nowrap="true" align="center">
+–9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 </td><td> u64 </td>
+<td nowrap="true" style="font-size: x-small;" align="right">
+0 to 18,446,744,073,709,551,615 </td></tr>
+<tr><td> arch </td><td> isize </td><td> </td><td> usize </td><td> </td></tr>
+</tbody></table>
+
+*Table 4-1: Integer types in Rust. Each code (for example, i32) can be used to
+declare the type of a value.*
+
+| Length | signed   |                                                         |
+|--------|----------|---------------------------------------------------------|
+| 8-bit  | i8       |                       -128 to 127                       |
+| 16-bit | i16      |                    -32,768 to 32,767                    |
+| 32-bit | i32      |             –2,147,483,648 to 2,147,483,647             |
+| 64-bit | i64      | –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 |
+| arch   | isize    | depends on CPU architecture, e.g. on 32-bit = i32       |
+
+| Length | unsigned |                                                         |
+|--------|----------|---------------------------------------------------------|
+| 8-bit  | u8       | 0 to 255                                                |
+| 16-bit | u16      | 0 to 65,535                                             |
+| 32-bit | u32      | 0 to 4,294,967,295                                      |
+| 64-bit | u64      | 0 to 18,446,744,073,709,551,615                         |
+| arch   | usize    | depends on CPU architecture, e.g. on 64-bit = u64       |
+
+*Table 4-1: Integer types in Rust. Each code (for example, i32) can be used to
+declare the type of a value.*
+
+<table><thead><tr><td> Length </td><td> signed </td><td> </td></tr></thead>
+<tbody><tr><td> 8-bit </td><td> i8 </td><td align="center">                       -128 to 127                       </td></tr>
+<tr><td> 16-bit </td><td> i16      </td><td align="center">                    -32,768 to 32,767                    </td></tr>
+<tr><td> 32-bit </td><td> i32      </td><td align="center">             –2,147,483,648 to 2,147,483,647             </td></tr>
+<tr><td> 64-bit </td><td> i64      </td><td align="center"> –9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 </td></tr>
+<tr><td> arch   </td><td> isize    </td><td> depends on CPU architecture, e.g. on 32-bit = i32       </td></tr>
+</tbody><thead><tr><td> Length </td><td> unsigned </td><td> </td></tr></thead><tbody>
+<tr><td> 8-bit  </td><td> u8       </td><td> 0 to 255                                                </td></tr>
+<tr><td> 16-bit </td><td> u16      </td><td> 0 to 65,535                                             </td></tr>
+<tr><td> 32-bit </td><td> u32      </td><td> 0 to 4,294,967,295                                      </td></tr>
+<tr><td> 64-bit </td><td> u64      </td><td> 0 to 18,446,744,073,709,551,615                         </td></tr>
+<tr><td> arch   </td><td> usize    </td><td> depends on CPU architecture, e.g. on 64-bit = u64       </td></tr>
+</tbody></table>
 
 *Table 4-1: Integer types in Rust. Each code (for example, i32) can be used to
 declare the type of a value.*
